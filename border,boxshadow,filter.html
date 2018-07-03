@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 50%;
+            min-width: 320px;
+            margin: auto;
+            overflow: hidden;
+            filter: blur(6)
+        }
+
+
+        .border {
+            /* display: inline-block; */
+            width: 0;
+            height: 0;
+            --borderStyle: 80px solid;
+            border: var(--borderStyle) #cccccc;
+            outline: 1px dashed #ff00ff;
+            margin: 10px;
+            position: relative;
+        }
+
+        .border:nth-child(2) {
+            border-top: 40px solid #f90;
+            border-left: 40px solid #fff;
+            border-right: 40px solid #ffff00;
+            border-bottom: var(--borderStyle) #333;
+            /* border-bottom:  40px solid #333; */
+        }
+
+
+        .border:nth-child(3) {
+            border-top: var(--borderStyle) transparent;
+            border-left: var(--borderStyle) transparent;
+            border-right: var(--borderStyle)transparent;
+            border-bottom: var(--borderStyle) #333;
+
+        }
+
+        .border:nth-child(4) {
+            border-left: var(--borderStyle) #333;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 0px red,
+            5px 0px 10px 0px blue,
+            0px 5px 10px 0px #f90,
+            -5px 0px 10px 0px red,
+            0px -5px 10px 0px #334455;
+        }
+
+        .border:nth-child(4):after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            border: 20px solid #cccccc;
+            border-left: 20px solid #333;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 0px red,
+            5px 0px 10px 0px blue,
+            0px 5px 10px 0px #f90,
+            -5px 0px 10px 0px red,
+            0px -5px 10px 0px #334455;
+
+        }
+
+        .border:nth-child(4):before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            border: 20px solid #cccccc;
+            border-left: 20px solid #333;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 0px red,
+            5px 0px 10px 0px blue,
+            0px 5px 10px 0px #f90,
+            -5px 0px 10px 0px red,
+            0px -5px 10px 0px #334455;
+
+        }
+
+        .border:nth-child(5) {
+            width: 20px;
+            height: 20px;
+
+            border-right: var(--borderStyle) #333;
+        }
+
+        .container {
+            width: 200px;
+            margin: 20px auto;
+        }
+
+        .avator {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: url(./timg.jpg);
+            background-size: 100% 100%;
+        }
+
+        .avator::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: inherit;/**/
+            background-size: 100% 100%;
+            border-radius: 50%;
+            -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+            -webkit-filter: blur(10px) brightness(80%) opacity(0.8);
+            filter: blur(10px) brightness(80%) opacity(0.8);
+            z-index: -1;
+        }
+
+        p {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 28px;
+            font-family: Righteous;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+
+        <div class="container">
+            <div class="avator"></div>
+            <p>bulr shadow</p>
+        </div>
+    </div>
+</body>
+
+</html>
